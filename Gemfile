@@ -11,7 +11,8 @@ gem 'rails', '~> 5.2.2'
 gem 'devise'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
-
+#stock-quote 
+gem "stock_quote", '~> 2.0.0'
 #use bootstrap
 gem 'bootstrap', '~> 4.2.1'
 gem 'jquery-rails'
