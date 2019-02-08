@@ -14,8 +14,10 @@
   </div>
 <% end %>
 
-<div>
-  <span><%= @stock.name %> </span>
-  <span><%= @stock.ticker %> </span>
-  <span><%= @stock.last_price %> </span>
-</div>
+<% if @stock %>
+  <div>
+    <span><%= @stock.name %> </span>
+    <span><%= @stock.ticker %> </span>
+    <span><%= @stock.last_price %> </span>
+  </div>
+<%end%>
