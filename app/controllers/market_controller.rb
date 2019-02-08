@@ -4,7 +4,9 @@ class MarketController < ApplicationController
       puts "hello"
       @stock = Market.search(params[:stock])
       if @stock
-      render 'user/my_portfolio'
+        respond_to do |format|
+          format.js {render partial: 'user/stock'}
+        end
       else
         redirect_to my_portfolio_path
       end

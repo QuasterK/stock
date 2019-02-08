@@ -1,5 +1,5 @@
 <h1> My portfolio </h1>
-<%= form_tag(search_path, method: "get") do %>
+<%= form_tag(search_path, remote: true, method: "get") do %>
   <div class= 'row input-group'>
     <div class='col-8'>
       <%= text_field_tag :stock, params[:stock],
@@ -14,10 +14,6 @@
   </div>
 <% end %>
 
-<% if @stock %>
-  <div>
-    <span><%= @stock.name %> </span>
-    <span><%= @stock.ticker %> </span>
-    <span><%= @stock.last_price %> </span>
-  </div>
-<%end%>
+<div id='results'>
+  <%= render 'stock' %>
+</div>
