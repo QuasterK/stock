@@ -3,5 +3,6 @@
     <span><%= @stock.name %> </span>
     <span><%= @stock.ticker %> </span>
     <span><%= @stock.last_price %> </span>
+    <span> <%= link_to "add to favorite", user_stock_index_path(user: current_user.email, stock_ticker: @stock.ticker), :method => :post %> </span>
   </div>
 <%end%>

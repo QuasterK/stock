@@ -1,7 +1,6 @@
 class MarketController < ApplicationController
   def search
     if params[:stock].present?
-      puts "hello"
       @stock = Market.search(params[:stock])
       if @stock
         respond_to do |format|
