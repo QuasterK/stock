@@ -1,5 +1,4 @@
 class UserStockController < ApplicationController
-
   def create
     stock = Market.find_by ticker: params[:stock_ticker].upcase
     if stock.blank?

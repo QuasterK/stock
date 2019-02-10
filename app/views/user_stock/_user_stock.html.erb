@@ -1,0 +1,9 @@
+<% if @user_stocks %>
+  <% @user_stocks.each do |stock| %>
+    <div>
+      <span><%= stock.market.name %> </span>
+      <span><%= stock.market.ticker %> </span>
+      <span><%= stock.market.last_price %> </span>
+    </div>
+  <% end %>
+<%end%>
