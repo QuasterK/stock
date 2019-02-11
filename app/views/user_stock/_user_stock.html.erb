@@ -4,6 +4,7 @@
       <span><%= stock.market.name %> </span>
       <span><%= stock.market.ticker %> </span>
       <span><%= stock.market.last_price %> </span>
+      <%= link_to "delete", user_stock_path(stock), method: :delete %>
     </div>
   <% end %>
 <%end%>
