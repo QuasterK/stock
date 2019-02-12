@@ -1,0 +1,6 @@
+<% if @friend %>
+  <span> <%= @friend.name %></span>
+  <span> <%= @friend.surname %></span>
+  <span> <%= @friend.email %></span>
+  <%= link_to "Add friend", friendship_create_path(friend: @friend.id), :method => :post %>
+<% end %>

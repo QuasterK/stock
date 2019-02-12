@@ -18,6 +18,11 @@
           <li class="nav-item">
             <%= link_to 'Home', welcome_index_path, :class => 'nav-link'%>
           </li>
+
+          <div class="navbar-item">
+            <%= link_to 'My Friends',  friendship_path, method: :get, :class => 'nav-link'%>
+          </div>
+
           <li class="nav-item">
             <%= link_to 'My Portfolio', my_portfolio_path, :class => 'nav-link'%>
           </li>

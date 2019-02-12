@@ -1,0 +1,9 @@
+<% if @friends %>
+  <% @friends.each do |friend| %>
+    <div>
+      <%= friend.friend.name %>
+      <%= friend.friend.surname %>
+      <%= friend.friend.email %>
+    </div>
+  <% end %>
+<%end%>
