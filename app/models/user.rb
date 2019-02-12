@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :markets, through: :user_stocks
   has_many :user_stocks
-  has_many :friend
+  has_many :friendships
   has_many :friends, through: :friendships
 end
