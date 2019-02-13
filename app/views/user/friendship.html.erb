@@ -2,7 +2,7 @@
 <div>
 <%= form_tag(search_for_user_path, remote: true, method: "get") do %>
   <%= text_field_tag :friend, params[:friend],
-                            placeholder: "Friends name", autofocus: true,
+                            placeholder: "Friends name or email", autofocus: true,
                             class: "form-control search-box input-lg" %>
 
   <%= button_tag(type: :submit, class: "btn btn-success") do %>
