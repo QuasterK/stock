@@ -1,0 +1,13 @@
+
+<% if @friend_portfolio %>
+  <h1> <%= @friend_portfolio.first.user.name %> <%= @friend_portfolio.first.user.surname %> </h1>
+  <% @friend_portfolio.each do |stock| %>
+    <div>
+      <span><%= stock.market.name %> </span>
+      <span><%= stock.market.ticker %> </span>
+      <span><%= stock.market.last_price %> </span>
+    </div>
+  <% end %>
+<% else %>
+
+<% end %>

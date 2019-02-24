@@ -4,7 +4,6 @@
       <%= friend.name %>
       <%= friend.surname %>
       <%= friend.email %>
-      <%= friend.id %>
       <%= link_to "Add friend", friendship_create_path(friend: friend.id), :method => :post %>
     </div>
   <% end %>

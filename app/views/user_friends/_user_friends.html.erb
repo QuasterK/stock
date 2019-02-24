@@ -1,9 +1,9 @@
 <% if @friends %>
   <% @friends.each do |friend| %>
     <div>
-      <%= friend.friend.name %>
-      <%= friend.friend.surname %>
+      <%= link_to "#{friend.friend.name} #{friend.friend.surname}", friend_portfolio_path(:friend_id => friend.friend.id)  %>
       <%= friend.friend.email %>
+      <%= link_to 'Delete', friendship_destroy_path(:friend_id => friend.friend.id), method: :delete %>
     </div>
   <% end %>
 <%end%>
