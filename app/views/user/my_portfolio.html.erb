@@ -1,19 +1,19 @@
-<h1> My portfolio </h1>
-<%= form_tag(search_path, remote: true, method: "get") do %>
-  <div class= 'row input-group'>
-    <div class='col-8'>
-      <%= text_field_tag :stock, params[:stock],
-                                  placeholder: "Stock ticker symbol", autofocus: true,
-                                  class: "form-control search-box input-lg" %>
+<div class='mt-5 mb-5'>
+  <%= form_tag(search_path, remote: true, method: "get") do %>
+    <div class= 'row input-group'>
+      <div class='col-8'>
+        <%= text_field_tag :stock, params[:stock],
+                                    placeholder: "Stock ticker symbol", autofocus: true,
+                                    class: "form-control search-box input-lg" %>
+      </div>
+      <div class='col-4'>
+        <%= button_tag(type: :submit, class: "btn btn-success") do %>
+            Look up a stock
+        <% end %>
+      </div>
     </div>
-    <div class='col-4'>
-      <%= button_tag(type: :submit, class: "btn btn-success") do %>
-          Look up a stock
-      <% end %>
-    </div>
-  </div>
-<% end %>
-
+  <% end %>
+</div>
 <div id='results'>
   <%= render 'stock' %>
 </div>

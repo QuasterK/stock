@@ -1,10 +1,25 @@
 <% if @user_stocks %>
-  <% @user_stocks.each do |stock| %>
-    <div>
-      <span><%= stock.market.name %> </span>
-      <span><%= stock.market.ticker %> </span>
-      <span><%= stock.market.last_price %> </span>
-      <%= link_to "delete", user_stock_path(stock), method: :delete %>
-    </div>
-  <% end %>
+  <div class='mt-3'>
+    <h1 class='text-center'> Your stock </h1>
+    <table class='table table-striped'>
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Symbol</th>
+          <th scope="col">Open price</th>
+          <th scope="col">Delete from favorite</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @user_stocks.each do |stock| %>
+          <tr>
+            <td><%= stock.market.name %> </td>
+            <td><%= stock.market.ticker %> </td>
+            <td><%= stock.market.last_price %> </td>
+            <td><%= link_to "delete", user_stock_path(stock), method: :delete, :class => 'btn btn-danger btn-sm ' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 <%end%>

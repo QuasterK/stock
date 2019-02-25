@@ -1,8 +1,23 @@
 <% if @stock %>
-  <div>
-    <span><%= @stock.name %> </span>
-    <span><%= @stock.ticker %> </span>
-    <span><%= @stock.last_price %> </span>
-    <span> <%= link_to "add to favorite", user_stock_index_path(user: current_user.email, stock_ticker: @stock.ticker), :method => :post %> </span>
+  <div class='mt-3'>
+    <h1 class='text-center'> add to your stock </h1>
+    <table class='table table-striped'>
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Symbol</th>
+          <th scope="col">Open price</th>
+          <th scope="col">Delete from favorite</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= @stock.name %> </td>
+          <td><%= @stock.ticker %> </td>
+          <td><%= @stock.last_price %> </td>
+          <td> <%= link_to "add to favorite", user_stock_index_path(user: current_user.email, stock_ticker: @stock.ticker), :method => :post, :class => 'btn btn-success btn-sm ' %> </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 <%end%>
