@@ -1,3 +1,30 @@
-<h1>Welcome in ruby app</h1>
+<div class="container">
+  
+  <div class="row">
+    <div class="col text-center mb-5 mt-5">
+      <h1>stock market today</h1>
+    </div>
+  </div>
 
-<%= line_chart(@data, min: @price_min, max: @price_max) %>
+  <div class="row">
+    <span class= "col-12 col-lg-6">
+      <h4> Tesla </h4>
+      <%= line_chart(@tsla_data, min: @tsla_price_min, max: @tsla_price_max) %>
+    </span>
+    <span class= "col-12 col-lg-6">
+      <h4> Apple </h4>
+      <%= line_chart(@aapl_data, min: @aapl_price_min, max: @aapl_price_max) %>
+    </span>
+  </div>
+  <div class="row">
+    <span class= "col-12 col-lg-6">
+      <h4> Microsoft </h4>
+      <%= line_chart(@msft_data, min: @msft_price_min, max: @msft_price_max) %>
+    </span>
+    <span class= "col-12 col-lg-6">
+      <h4> IBM </h4>
+      <%= line_chart(@ibm_data, min: @ibm_price_min, max: @ibm_price_max) %>
+    </span>
+  </div>
+
+</div>
