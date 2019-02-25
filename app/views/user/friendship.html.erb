@@ -1,14 +1,17 @@
-<h1> friendship </h1>
-<div>
+<div class="mt-5 mb-5">
 <%= form_tag(search_for_user_path, remote: true, method: "get") do %>
-  <%= text_field_tag :friend, params[:friend],
+  <div class= 'row input-group'>
+    <div class='col-8'>
+      <%= text_field_tag :friend, params[:friend],
                             placeholder: "Friends name or email", autofocus: true,
                             class: "form-control search-box input-lg" %>
-
-  <%= button_tag(type: :submit, class: "btn btn-success") do %>
-      Look up friends
-  <% end %>
-
+    </div>
+    <div class='col-4'>
+      <%= button_tag(type: :submit, class: "btn btn-success") do %>
+        Look up friends
+      <% end %>
+    </div>
+  </div>
 <% end %>
 </div>
 

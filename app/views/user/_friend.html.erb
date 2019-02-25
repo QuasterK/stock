@@ -1,10 +1,25 @@
 <% if @friend %>
-  <% @friend.map do |friend| %>
-    <div>
-      <%= friend.name %>
-      <%= friend.surname %>
-      <%= friend.email %>
-      <%= link_to "Add friend", friendship_create_path(friend: friend.id), :method => :post %>
-    </div>
-  <% end %>
+  <div class='mt-3'>
+    <h1 class='text-center'> Add friend </h1>
+    <table class='table table-striped'>
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Surname</th>
+          <th scope="col">Email</th>
+          <th scope="col">Add to friendship</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @friend.map do |friend| %>
+          <tr>
+            <td><%= friend.name %></td>
+            <td><%= friend.surname %></td>
+            <td><%= friend.email %></td>
+            <td><%= link_to "Add friend", friendship_create_path(friend: friend.id), :method => :post, :class => "btn btn-success btn-sm " %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 <% end %>

@@ -1,9 +1,23 @@
 <% if @friends %>
-  <% @friends.each do |friend| %>
-    <div>
-      <%= link_to "#{friend.friend.name} #{friend.friend.surname}", friend_portfolio_path(:friend_id => friend.friend.id)  %>
-      <%= friend.friend.email %>
-      <%= link_to 'Delete', friendship_destroy_path(:friend_id => friend.friend.id), method: :delete %>
-    </div>
-  <% end %>
+  <div class='mt-3'>
+    <h1 class='text-center'> Your friends </h1>
+    <table class='table table-striped'>
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Delete from friendship</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @friends.each do |friend| %>
+        <tr >
+           <td><%= link_to "#{friend.friend.name} #{friend.friend.surname}", friend_portfolio_path(:friend_id => friend.friend.id), :class => 'link'  %> </td>
+           <td><%= friend.friend.email %></td>
+           <td><%= link_to 'Delete', friendship_destroy_path(:friend_id => friend.friend.id), method: :delete, :class => 'btn btn-danger btn-sm ' %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
 <%end%>

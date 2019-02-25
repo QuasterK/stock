@@ -23,5 +23,8 @@ class FriendshipController < ApplicationController
   def portfolio
     friend = User.find(params[:friend_id])
     @friend_portfolio = friend.user_stocks.all
+    p'!!!!!!!!!!!!!!!!!!!!!!!'
+    p @friend_portfolio.first
+    p '!!!!!!!!!!!!!!!!!!!!!!'
   end
 end
